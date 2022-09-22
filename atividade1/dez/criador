@@ -1,0 +1,23 @@
+01 SqlCommand cmd = conexao.CreateCommand();
+02 cmd.CommandText =
+03     @"INSERT INTO dbo.TB_LOG
+04                 (Aplicacao
+05                 ,Mensagem
+06                 ,DataOcorrencia
+07                 ,TipoOcorrencia)
+08             VALUES
+09                 (@APLICACAO
+10                 ,@MENSAGEM
+11                 ,@DATAOCORRENCIA
+12                 ,@TIPOOCORRENCIA)";
+13 cmd.Parameters.Add("@APLICACAO",
+14     SqlDbType.VarChar).Value = log.Aplicacao.Trim();
+15 cmd.Parameters.Add("@MENSAGEM",
+16     SqlDbType.VarChar).Value = log.Mensagem.Trim();
+17 cmd.Parameters.Add("@DATAOCORRENCIA",
+18     SqlDbType.DateTime).Value = log.DataOcorrencia;
+19 cmd.Parameters.Add("@TIPOOCORRENCIA",
+20     SqlDbType.Char).Value = log.TipoOcorrencia;
+21 conexao.Open();
+22 cmd.ExecuteNonQuery();
+23 conexao.Close()
