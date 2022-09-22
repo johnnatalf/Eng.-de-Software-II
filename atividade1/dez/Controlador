@@ -1,0 +1,4 @@
+O padrão conhecido como Controlador está normalmente associado à implementação de interfaces gráficas para interação com usuários. 
+Este princípio estipula a existência de um objeto intermediário, o qual terá por responsabilidade coordenar uma série de tarefas 
+em resposta a eventos que ocorram em tais interfaces (como o clique de um botão, o donwload de um arquivo, o envio de dados para
+o cadastramento de informações, dentre outras ações).
