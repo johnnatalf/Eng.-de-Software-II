@@ -1,0 +1,10 @@
+Ao se considerar as tarefas de modelagem das classes utilizadas em uma aplicação, uma série de escolhas serão feitas de forma a se definirem as responsabilidades
+de cada tipo identificado. Se este processo for bem conduzido, o código resultante será compreendido sem grandes dificuldades, assim como sua manutenção e/ou evolução
+serão facilitadas de maneira significativa.
+
+A ideia que gira em torno do pattern “Especialista na Informação” diz respeito a qual classe, dentro de um relacionamento, será responsável por prover uma determinada
+funcionalidade.
+
+Um exemplo que ajuda a entender melhor este princípio seria o de uma classe chamada NotaFiscal. Utilizado na representação de notas fiscais, este tipo possuirá um
+relacionamento de composição com uma classe de nome ItemNota. Como é fácil de deduzir, ItemNota conterá informações relativas aos diferentes itens declarados
+em um documento fiscal.
