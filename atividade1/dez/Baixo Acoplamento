@@ -1,0 +1,36 @@
+
+using System;
+02 using System.Collections.Generic;
+03 using System.Linq;
+04 using System.Web;
+05 using System.Data.SqlClient;
+06
+07 namespace TesteGRASP
+08 {
+09     public static class ReaderHelper
+10     {
+11         public static Cliente Parse(SqlDataReader reader)
+12         {
+13             Cliente cliente = new Cliente();
+14             cliente.CodCliente =
+15                 reader["CodCliente"].ToString();
+16             cliente.NomeCliente =
+17                 reader["NomeCliente"].ToString();
+18             cliente.Responsavel =
+19                 reader["Responsavel"].ToString();
+20             cliente.Endereco =
+21                 reader["Endereco"].ToString();
+22             cliente.Cidade =
+23                 reader["Cidade"].ToString();
+24             cliente.Pais =
+25                 reader["Pais"].ToString();
+26             cliente.Telefone =
+27                 reader["Telefone"].ToString();
+28
+29             return cliente;
+30         }
+31     }
+32 }
+
+
+
