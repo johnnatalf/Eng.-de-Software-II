@@ -1,0 +1,49 @@
+//Calculo de IMC
+
+protected void btnCalcularIMC_Click(object sender, EventArgs e)
+02 {
+03     double peso;
+04     try
+05     {
+06         peso = Convert.ToDouble(txtPeso.Text);
+07     }
+08     catch (Exception ex)
+09     {
+10         throw new Exception(
+11             "Erro durante a conversão do Peso.", ex);
+12     }
+13
+14     if (peso <= 0)
+15     {
+16         throw new Exception(
+17             "O Peso informado dever ser maior do que zero.");
+18     }
+19
+20     double altura;
+21     try
+22     {
+23         altura = Convert.ToDouble(txtAltura.Text);
+24     }
+25     catch (Exception ex)
+26     {
+27         throw new Exception(
+28             "Erro durante a conversão da Altura.", ex);
+29     }
+30
+31     if (altura <= 0)
+32     {
+33         throw new Exception(
+34             "A Altura informada dever ser maior do que zero.");
+35     }
+36
+37     double valorIMC = peso / (altura * altura);
+38
+39     lblValorIMC.Text = valorIMC.ToString();
+40
+41     if (valorIMC < 18.5)
+42         lblSituacaoPessoa.Text = "Abaixo do Peso";
+43     else if (valorIMC > 25)
+44         lblSituacaoPessoa.Text = "Acima do Peso";
+45     else
+46         lblSituacaoPessoa.Text = "Peso Normal";
+47 }
