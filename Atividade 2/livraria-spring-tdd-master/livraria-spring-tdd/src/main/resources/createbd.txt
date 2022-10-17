@@ -1,0 +1,27 @@
+create table tb_livro(
+	id_livro numeric primary key,
+	autor character(255),
+	titulo character(255),
+	emprestado integer,
+	reservado integer
+)
+
+create table tb_usuario(
+	id_usuario numeric primary key,
+	nome character(255),
+	matricula character(255),
+	debito integer
+)
+
+create table tb_emprestimo(
+	id_emprestimo numeric primary key,
+	id_usuario numeric,
+	data_inicio date,
+	data_prevista date,
+	data_devolucao date
+);
+
+create table tb_emprestimo_livro(
+	id_emprestimo numeric,
+	id_livro numeric
+);
