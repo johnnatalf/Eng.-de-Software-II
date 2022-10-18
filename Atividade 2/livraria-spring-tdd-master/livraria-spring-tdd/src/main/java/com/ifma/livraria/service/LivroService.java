@@ -1,8 +1,11 @@
 package com.ifma.livraria.service;
 
+import com.ifma.livraria.entity.HistoricoEmprestimoLivro;
 import com.ifma.livraria.entity.Livro;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class LivroService {
@@ -36,6 +39,10 @@ public class LivroService {
         livro.setReservado(false);
         livro.setEmprestado(false);
         return true;
+    }
+
+    public List<HistoricoEmprestimoLivro> getEmprestimosPorLivro(Livro livro){
+        return null;
     }
 
 
